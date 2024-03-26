@@ -7,7 +7,7 @@ app = Flask(__name__)
 db_params = {
     "dbname": "yourdb",
     "user": "youruser",
-    "password": "1234Un!x",
+    "password": 1234Un!x,
     "host": "localhost",  # Change this if your database is on a different host
 }
 
