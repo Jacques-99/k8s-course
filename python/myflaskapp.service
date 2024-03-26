@@ -5,7 +5,7 @@ After=network.target
 [Service]
 User=root
 WorkingDirectory=/home/ubuntu/k8s-course/python
-ExecStart=/home/ubuntu/umuzi-k8s/python/venv/bin/python /home/ubuntu/k8s-course/python/app.py
+ExecStart=/home/ubuntu/k8s-course/python/venv/bin/python /home/ubuntu/k8s-course/python/app.py
 
 [Install]
 WantedBy=multi-user.target
