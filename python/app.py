@@ -7,7 +7,7 @@ app = Flask(__name__)
 db_params = {
     "dbname": "yourdb",
     "user": "youruser",
-    "password": '1234Un!x',
+    "password": "1234Un!x",
     "host": "localhost",  # Change this if your database is on a different host
 }
 
@@ -23,13 +23,9 @@ def create_pressed_table():
         cur.execute("SELECT 1 FROM pressed LIMIT 1;")
 
         if cur.fetchone() is None:
-            # If no row exists, insert an initial row with count = 1
-            cur.execute("INSERT INTO pressed (count) VALUES (1);")
-        else:
-            # If a row exists, increment the count
-            cur.execute("UPDATE pressed SET count = count + 1;")
-
-        conn.commit()
+            # If no row exists, insert an initial row with count = 0
+            cur.execute("INSERT INTO pressed (count) VALUES (0);")
+            conn.commit()
     except Exception as e:
         print(str(e))
     finally:
