@@ -7,7 +7,7 @@ services:
     environment:
       - DB_NAME=dbname
       - DB_USER=youruser
-      - DB_PASSWORD=yourpassword
+      - DB_PASSWORD=newpassword
       - DB_HOST=postgres
     depends_on:
       - postgres
@@ -25,8 +25,8 @@ services:
     # mount the TLS certificates from the host machine to the container
     # change <your-domain> to your DNS
     volumes:
-      - /etc/letsencrypt/live/<your-domain>/fullchain.pem:/etc/letsencrypt/live/<your-domain>/fullchain.pem
-      - /etc/letsencrypt/live/<your-domain>/privkey.pem:/etc/letsencrypt/live/<your-domain>/privkey.pem
+      - /etc/letsencrypt/live/k8scourse.duckdns.org/fullchain.pem:/etc/letsencrypt/live/<your-domain>/fullchain.pem
+      - /etc/letsencrypt/live/k8scourse.duckdns.org/privkey.pem:/etc/letsencrypt/live/<your-domain>/privkey.pem
       - /etc/ssl/certs/dhparam.pem:/etc/ssl/certs/dhparam.pem
       
   postgres:
@@ -34,4 +34,4 @@ services:
     environment:
       POSTGRES_DB: dbname
       POSTGRES_USER: youruser
-      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_PASSWORD: newpassword
