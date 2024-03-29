@@ -4,7 +4,6 @@ metadata:
   name: nginx-ingress
 spec:
   rules:
-    <# replace with your domain>
     - host: k8scourse.duckdns.org
       http:
         paths:
