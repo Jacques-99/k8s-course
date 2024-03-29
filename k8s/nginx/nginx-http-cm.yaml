@@ -8,7 +8,6 @@ data:
   #   content
   # ---
   nginx.conf: |
-  # ---
     user nginx;
     worker_processes 1;
     events {
