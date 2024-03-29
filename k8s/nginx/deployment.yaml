@@ -13,8 +13,5 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        # remember to point to your own Harbor instance!
-        image: harbor.k8scourse.duckdns.org/application/nginx:v2
-      imagePullSecrets:
-        - name: your-regcred
+      - name: nginx-container
+        image: nginx
