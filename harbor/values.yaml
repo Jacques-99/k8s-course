@@ -1,1 +1,13 @@
-
+---
+externalURL: https://harbor.k8scourse.duckdns.org
+exposureType: ingress
+ingress:
+  core:
+    ingressClassName: "nginx"
+    pathType: ImplementationSpecific
+    controller: default
+    hostname: harbor.k8scourse.duckdns.org
+    annotations:
+      ingress.kubernetes.io/ssl-redirect: "true"
+      cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    tls: true
