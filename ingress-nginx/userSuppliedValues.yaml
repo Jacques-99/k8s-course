@@ -1,0 +1,6 @@
+controller:
+  admissionWebhooks:
+    certManager:
+      enabled: "true"
+  service:
+    externalIPs: ["129.151.182.67"]
