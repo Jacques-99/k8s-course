@@ -3,17 +3,17 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt-prod
+  name: letsencrypt-staging
   namespace: cert-manager
 spec:
   acme:
-    server: https://acme-v02.api.letsencrypt.org/directory
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
     # replace with your own email
     email: jacques.gemors.pos@gmail.com
     
     # secret resource that will be used to store the account's private key
     privateKeySecretRef:
-      name: letsencrypt-prod    
+      name: letsencrypt-staging    
     solvers:
       - http01:
           ingress:
