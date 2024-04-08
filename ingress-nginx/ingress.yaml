@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    name: ingress
+    namespace: ingress
+  spec:
+    ingressClassName: nginx
+    rules:
+      - host: k8scourse.duckdns.org
+        http:
+          paths:
+            - pathType: Prefix
+              backend:
+                service:
+                  name: exampleService
+                  port:
+                    number: 80
+              path: /
+    # This section is only required if TLS is to be enabled for the Ingress
+    tls:
+      - hosts:
+        - k8scourse.duckdns.org
+        secretName: example-tls
